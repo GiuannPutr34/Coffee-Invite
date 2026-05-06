@@ -58,7 +58,7 @@ function muoviNo(){
         tentativi++;
 
     if (tentativi > 10) {
-        bloccato = true; // dopo 3 tentativi si blocca
+        bloccato = true; // dopo 10 tentativi si blocca
         return;
     }
     let x = Math.random() * window.innerWidth * 0.8;
@@ -80,7 +80,7 @@ function bloccaNoClick(){
 
 <h1>Domanda importante ☕</h1>
 <h2>Vuoi prendere un caffè con me?</h2>
-<h3>Ennesima cazzata in the last days...🤣</h3>
+<h4>Ennesima cazzata in the last days btw...🤣</h4>
 
 
 <button id="si" onclick="inviaEmail()">Sì 😊</button>
