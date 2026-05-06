@@ -51,8 +51,16 @@ function inviaEmailNo(){
 }
 
 let bloccato = false;
+let tentativi = 0;
+
 function muoviNo(){
     if (bloccato) return;
+        tentativi++;
+
+    if (tentativi > 10) {
+        bloccato = true; // dopo 3 tentativi si blocca
+        return;
+    }
     let x = Math.random() * window.innerWidth * 0.8;
     let y = Math.random() * window.innerHeight * 0.8;
     let btn = document.getElementById("no");
