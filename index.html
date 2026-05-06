@@ -39,7 +39,7 @@ button{
 function inviaEmail(){
     emailjs.send("service_3a9k2df", "template_c8o132p", {message: "Sì voglio prendere un caffè ☕"}) // <-- METTI QUI SERVICE ID e TEMPLATE ID
     .then(function() {
-        document.body.innerHTML = "<h2>Email inviata! ❤️</h2>";
+        document.body.innerHTML = "<h2>Email inviata!</h2>";
     });
 }
 
@@ -58,8 +58,10 @@ function muoviNo(){
 
 <h1>Domanda importante ☕</h1>
 <h2>Vuoi prendere un caffè con me?</h2>
+<h3>Ennesima cazzata in the last days...🤣</h3>
 
-<button id="si" onclick="inviaEmail()">Sì ❤️</button>
+
+<button id="si" onclick="inviaEmail()">Sì 😊</button>
 <button id="no" onmouseover="muoviNo()">No 😅</button>
 
 </body>
