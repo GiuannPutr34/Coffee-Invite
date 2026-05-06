@@ -33,22 +33,36 @@ button{
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
 (function(){
-   emailjs.init("o9ZQft3unaw8KFj2g"); // <-- METTI QUI LA TUA PUBLIC KEY
+   emailjs.init("o9ZQft3unaw8KFj2g"); //PUBLIC KEY
 })();
 
-function inviaEmail(){
-    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "Sì voglio prendere un caffè ☕"}) // <-- METTI QUI SERVICE ID e TEMPLATE ID
+function inviaEmailSi(){
+    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "Sì voglio prendere un caffè ☕"}) //SERVICE ID e TEMPLATE ID
     .then(function() {
         document.body.innerHTML = "<h2>Email inviata!</h2>";
     });
 }
 
+function inviaEmailNo(){
+    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "No non voglio"}) //SERVICE ID e TEMPLATE ID
+    .then(function() {
+        document.body.innerHTML = "<h2>Email inviata!</h2>";
+    });
+}
+
+let bloccato = false;
 function muoviNo(){
+    if (bloccato) return;
     let x = Math.random() * window.innerWidth * 0.8;
     let y = Math.random() * window.innerHeight * 0.8;
     let btn = document.getElementById("no");
     btn.style.left = x + "px";
     btn.style.top = y + "px";
+}
+
+function bloccaNoClick(){
+    bloccato = true;
+    inviaEmailNo(); // se riesce a cliccare NO, ti arriva l'email
 }
 </script>
 
@@ -62,7 +76,7 @@ function muoviNo(){
 
 
 <button id="si" onclick="inviaEmail()">Sì 😊</button>
-<button id="no" onmouseover="muoviNo()">No 😅</button>
+<button id="no" onmouseover="muoviNo()" onclick="bloccaNoClick()">No 😅</button>
 
 </body>
 </html>
