@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Coffee break☕</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align:center;
+    margin-top:120px;
+    background:#ffeef2;
+}
+button{
+    font-size:20px;
+    padding:10px 20px;
+    margin:20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+#si{
+    background:#ff4d6d;
+    color:white;
+}
+#no{
+    background:#ccc;
+    position:absolute;
+}
+</style>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+   emailjs.init("o9ZQft3unaw8KFj2g"); // <-- METTI QUI LA TUA PUBLIC KEY
+})();
+
+function inviaEmail(){
+    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "Sì voglio prendere un caffè ☕"}) // <-- METTI QUI SERVICE ID e TEMPLATE ID
+    .then(function() {
+        document.body.innerHTML = "<h2>Email inviata! ❤️</h2>";
+    });
+}
+
+function muoviNo(){
+    let x = Math.random() * window.innerWidth * 0.8;
+    let y = Math.random() * window.innerHeight * 0.8;
+    let btn = document.getElementById("no");
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Domanda importante ☕</h1>
+<h2>Vuoi prendere un caffè con me?</h2>
+
+<button id="si" onclick="inviaEmail()">Sì ❤️</button>
+<button id="no" onmouseover="muoviNo()">No 😅</button>
+
+</body>
+</html>
