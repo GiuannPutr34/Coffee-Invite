@@ -57,8 +57,9 @@ function muoviNo(){
     if (bloccato) return;
         tentativi++;
 
-    if (tentativi > 10) {
-        bloccato = true; // dopo 10 tentativi si blocca
+    if (tentativi > 3) {
+        bloccato = true; // dopo 3 tentativi si blocca
+        alert("Hai vinto tu 😅");
         return;
     }
     let x = Math.random() * window.innerWidth * 0.8;
