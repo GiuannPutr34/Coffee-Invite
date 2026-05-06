@@ -38,18 +38,14 @@ button{
 
 function inviaEmailSi(){
     document.body.innerHTML = "<h2>Email inviata!</h2>";
-    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "Sì voglio prendere un caffè ☕"}) //SERVICE ID e TEMPLATE ID
-    .then(function() {
-        
-    });
+    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "Sì voglio prendere un caffè ☕"}); //SERVICE ID e TEMPLATE ID
+
 }
 
 function inviaEmailNo(){
     document.body.innerHTML = "<h2>Email inviata!</h2>";
-    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "No non voglio"}) //SERVICE ID e TEMPLATE ID
-    .then(function() {
-        
-    });
+    emailjs.send("service_3a9k2df", "template_c8o132p", {message: "No non voglio"}); //SERVICE ID e TEMPLATE ID
+
 }
 
 let bloccato = false;
